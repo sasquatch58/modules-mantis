@@ -10,7 +10,7 @@ if (!defined('W2P_BASE_DIR')) {
 ##
 
 $AppUI->savePlace();
-$titleBlock = new CTitleBlock( 'Mantis', 'mantis_logo_button.gif', $m, "$m.$a" );
+$titleBlock = new w2p_Theme_TitleBlock( 'Mantis', 'mantis_logo_button.gif', $m, "$m.$a" );
 $titleBlock->show();
 
 $project_id = (int) w2PgetParam($_REQUEST, 'project_id', 0);
@@ -111,7 +111,7 @@ if ($mantislink=="A"){
 $proj1 =$prefix ;
 $proj1 .= '%'  ;
 
-// first connect to the correct database
+// first connect to the correct mantis database
 db_connect( $w2Pconfig['mantis_dbhost'], $w2Pconfig['mantis_dbname'],
 	$w2Pconfig['mantis_dbuser'], $w2Pconfig['mantis_dbpass'], $w2Pconfig['dbpersist'] );
 
@@ -211,7 +211,7 @@ while ($row2 = mysql_fetch_array($result2, MYSQL_NUM)) {
 <?php
 	}
 }
-// connect again to DP  database
+// connect again to w2p database
 db_connect( $w2Pconfig['dbhost'], $w2Pconfig['dbname'],
 	$w2Pconfig['dbuser'], $w2Pconfig['dbpass'], $w2Pconfig['dbpersist'] );
 
